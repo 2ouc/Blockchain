@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="wrapper">
+    <div class="column is-4 is-offset-4">
+        <h3 class="title">Transfer</h3>
+        <div class="box">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="notification is-info">
+                    {{ messages[0] }}.
+                </div>
+            {% endif %}
+        {% endwith %}
+    <form method="POST" action="/mine">
+        <div class="form-group">
+            <div class="control">
+                <input class="form-control" type="text" name="receiver" placeholder="Receiver" autofocus="" required>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <div class="control">
+                <input class="form-control" type="number" name="amount" placeholder="Amount" autofocus="" required>
+            </div>
+        </div>
+    
+        
+    
+        <button class="button is-block is-info is-large is-fullwidth">Transfer</button>
+    </form>
+</div>
+</div>
+</section>
+
+{% endblock %}
